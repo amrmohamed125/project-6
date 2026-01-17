@@ -102,8 +102,11 @@ document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
     let name = card.querySelector(".card-title").textContent.trim();
     let price = parseFloat(card.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
     let img = card.querySelector("img").getAttribute("src");
+    const BASE_URL = window.location.origin + "/project-6/";
 
-    if (img.startsWith("images/")) img = "../images/" + img;
+    if (!img.startsWith("http")) {
+      img = BASE_URL + img.replace(/^(\.\.\/)+/, "");
+    }
 
     let existing = cart.find((item) => item.name === name);
 
@@ -139,7 +142,11 @@ document.querySelectorAll(".fa-heart").forEach((heart) => {
     let title = card.querySelector(".card-title").textContent.trim();
     let price = parseFloat(card.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
     let img = card.querySelector("img").getAttribute("src");
-    if (img.startsWith("images/")) img = "../images/" + img;
+    const BASE_URL = window.location.origin + "/project-6/";
+
+    if (!img.startsWith("http")) {
+      img = BASE_URL + img.replace(/^(\.\.\/)+/, "");
+    }
 
     let existing = favorites.find((item) => item.title === title);
 
@@ -197,6 +204,7 @@ if (isLoggedIn) {
 updateCartCount();
 
 renderCartDropdown();
+
 
 
 

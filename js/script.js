@@ -6,7 +6,7 @@ document.querySelector("#logout")?.addEventListener("click", function () {
   localStorage.removeItem("cart");
   localStorage.removeItem("favorites");
 
-  window.location.href = "../login/login.html";
+  window.location.href = "login/login.html";
 });
 
 
@@ -94,7 +94,7 @@ cartIcon.addEventListener("click", () => {
 document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
   btn.addEventListener("click", function () {
     if (!isLoggedIn) {
-      window.location.href = "../login/login.html";
+      window.location.href = "login/login.html";
       return;
     }
 
@@ -103,7 +103,7 @@ document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
     let price = parseFloat(card.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
     let img = card.querySelector("img").getAttribute("src");
 
-    if (img.startsWith("images/")) img = "../page/" + img;
+    if (img.startsWith("images/")) img = img.replace("../", "");
 
     let existing = cart.find((item) => item.name === name);
 
@@ -131,7 +131,7 @@ document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
 document.querySelectorAll(".fa-heart").forEach((heart) => {
   heart.addEventListener("click", function () {
     if (!isLoggedIn) {
-      window.location.href = "../login/login.html";
+      window.location.href = "login/login.html";
       return;
     }
 
@@ -139,7 +139,7 @@ document.querySelectorAll(".fa-heart").forEach((heart) => {
     let title = card.querySelector(".card-title").textContent.trim();
     let price = parseFloat(card.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
     let img = card.querySelector("img").getAttribute("src");
-    if (img.startsWith("images/")) img = "../page/" + img;
+    if (img.startsWith("images/")) img = img.replace("../", "");
 
     let existing = favorites.find((item) => item.title === title);
 
@@ -197,4 +197,5 @@ if (isLoggedIn) {
 updateCartCount();
 
 renderCartDropdown();
+
 

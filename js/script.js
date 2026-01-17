@@ -6,7 +6,7 @@ document.querySelector("#logout")?.addEventListener("click", function () {
   localStorage.removeItem("cart");
   localStorage.removeItem("favorites");
 
-  window.location.href = "../login/login.html";
+  window.location.href = "login/login.html";
 });
 
 
@@ -79,7 +79,7 @@ function renderCartDropdown() {
   });
 
   const viewAll = document.createElement("a");
-  viewAll.href = "../cart-products/cart_products.html";
+  viewAll.href = "cart-products/cart_products.html";
   viewAll.className = "btn btn-dark w-100 mt-2";
   viewAll.textContent = "View All Products";
   cartDropdown.appendChild(viewAll);
@@ -94,7 +94,7 @@ cartIcon.addEventListener("click", () => {
 document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
   btn.addEventListener("click", function () {
     if (!isLoggedIn) {
-      window.location.href = "../login/login.html";
+      window.location.href = "login/login.html";
       return;
     }
 
@@ -131,7 +131,7 @@ document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
 document.querySelectorAll(".fa-heart").forEach((heart) => {
   heart.addEventListener("click", function () {
     if (!isLoggedIn) {
-      window.location.href = "../login/login.html";
+      window.location.href = "/login.html";
       return;
     }
 
@@ -195,4 +195,5 @@ if (isLoggedIn) {
 
 // ✅ تحديث عند التحميل
 updateCartCount();
+
 renderCartDropdown();

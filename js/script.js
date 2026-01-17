@@ -6,7 +6,7 @@ document.querySelector("#logout")?.addEventListener("click", function () {
   localStorage.removeItem("cart");
   localStorage.removeItem("favorites");
 
-  window.location.href = "login.html";
+  window.location.href = "../login/login.html";
 });
 
 
@@ -94,7 +94,7 @@ cartIcon.addEventListener("click", () => {
 document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
   btn.addEventListener("click", function () {
     if (!isLoggedIn) {
-      window.location.href = "login.html";
+      window.location.href = "../login/login.html";
       return;
     }
 
@@ -131,7 +131,7 @@ document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
 document.querySelectorAll(".fa-heart").forEach((heart) => {
   heart.addEventListener("click", function () {
     if (!isLoggedIn) {
-      window.location.href = "login.html";
+      window.location.href = "../login/login.html";
       return;
     }
 

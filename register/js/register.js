@@ -19,8 +19,9 @@ registerbtn.addEventListener("click", function(e) {
     alert("Registration successful!");
 
     setTimeout(() => {
-      window.location.href = "login/login.html";
+      window.location.href = "../../login/login.html";
     }, 1000);
   }
 
 });
+

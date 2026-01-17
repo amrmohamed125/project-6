@@ -101,12 +101,8 @@ document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
     let card = this.closest(".card");
     let name = card.querySelector(".card-title").textContent.trim();
     let price = parseFloat(card.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
-    let img = card.querySelector("img").getAttribute("src");
-    const BASE_URL = window.location.origin + "/project-6/";
-
-    if (!img.startsWith("http")) {
-      img = BASE_URL + img.replace(/^(\.\.\/)+/, "");
-    }
+    let img = card.querySelector("img").src;
+}
 
     let existing = cart.find((item) => item.name === name);
 
@@ -141,12 +137,7 @@ document.querySelectorAll(".fa-heart").forEach((heart) => {
     let card = this.closest(".card");
     let title = card.querySelector(".card-title").textContent.trim();
     let price = parseFloat(card.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
-    let img = card.querySelector("img").getAttribute("src");
-    const BASE_URL = window.location.origin + "/project-6/";
-
-    if (!img.startsWith("http")) {
-      img = BASE_URL + img.replace(/^(\.\.\/)+/, "");
-    }
+    let img = card.querySelector("img").src;
 
     let existing = favorites.find((item) => item.title === title);
 
@@ -204,6 +195,7 @@ if (isLoggedIn) {
 updateCartCount();
 
 renderCartDropdown();
+
 
 
 

@@ -102,7 +102,6 @@ document.querySelectorAll(".btn.btn-primary").forEach((btn) => {
     let name = card.querySelector(".card-title").textContent.trim();
     let price = parseFloat(card.querySelector("p").textContent.replace(/[^0-9.]/g, ""));
     let img = card.querySelector("img").src;
-}
 
     let existing = cart.find((item) => item.name === name);
 
@@ -195,6 +194,7 @@ if (isLoggedIn) {
 updateCartCount();
 
 renderCartDropdown();
+
 
 
 

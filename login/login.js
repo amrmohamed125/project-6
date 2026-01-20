@@ -15,13 +15,14 @@ login.addEventListener("click", function(e) {
 
     if (getemail.trim() === email.value.trim() && getpassword.trim() === password.value.trim()) {
         setTimeout(() => {
-            window.location.href = "/project-6/index.html";
+            window.location.href = "/E-Commerce/index.html";
         }, 1000);
     } else {
         alert("Incorrect email or password!");
     }
 
 });
+
 
 
 

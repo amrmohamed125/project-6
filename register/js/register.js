@@ -19,11 +19,12 @@ registerbtn.addEventListener("click", function(e) {
     alert("Registration successful!");
 
     setTimeout(() => {
-      window.location.href = "/project-6/login/login.html";
+      window.location.href = "../login/login.html";
     }, 1000);
   }
 
 });
+
 
 
 
